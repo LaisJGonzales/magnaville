@@ -1,14 +1,22 @@
-# Welcome to your Lovable project
+# Magnaville
+
+Iai! Quero um site portifólio que apresente uma construtora.
+
+Use: Css, JS, e HTML. 
+
+Quero que o back And seja fácil de alterar, pra uma desenvolvedora amadora, então faça centenas de pastas com nomes estranhos, faça o máximo incode que puder, coloque comentários sobre o que é cada coisa
+
+O site as cores tem as cores base azul, laranja e dourado
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/079b47de-e588-4df0-83f3-86d87affea6c).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +28,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
