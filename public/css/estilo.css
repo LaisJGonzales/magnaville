@@ -1,0 +1,776 @@
+/* ============================================================
+   ESTILO DO SITE - CONSTRUTORA ALICERCE & OURO
+   ============================================================
+   COMO MEXER AQUI (guia rápido):
+
+   - Quer trocar as cores? Mexa SÓ no bloco ":root" logo abaixo.
+   - Quer texto maior/menor? Procure "font-size".
+   - Quer mais espaço entre seções? Procure ".secao { padding ... }".
+   - Cada bloco tem um comentário dizendo a que parte do site pertence.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1) AS CORES DO SITE (paleta: azul, laranja e dourado)
+   Troque o código hexadecimal e a cor muda em TODO o site.
+   ------------------------------------------------------------ */
+:root {
+  --azul-escuro: #0a2540; /* fundo das seções escuras */
+  --azul: #12406b; /* azul principal */
+  --azul-claro: #e8f0f8; /* fundo bem claro azulado */
+  --laranja: #f26a1b; /* cor dos botões principais */
+  --laranja-escuro: #d4550c; /* laranja no hover (mouse em cima) */
+  --dourado: #c9a227; /* detalhes nobres, linhas e destaques */
+  --dourado-claro: #e6c661;
+  --branco: #ffffff;
+  --cinza-texto: #4a5568; /* textos comuns */
+  --cinza-borda: #dde3ea;
+
+  /* Fontes */
+  --fonte-titulo: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --fonte-texto: "Inter", Arial, sans-serif;
+
+  /* Cantos arredondados e sombras */
+  --canto: 14px;
+  --sombra: 0 18px 40px rgba(10, 37, 64, 0.14);
+}
+
+/* ------------------------------------------------------------
+   2) RESET BÁSICO - deixa todos os navegadores parecidos
+   ------------------------------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* rolagem suave ao clicar no menu */
+  scroll-padding-top: 86px;
+}
+
+body {
+  font-family: var(--fonte-texto);
+  color: var(--azul-escuro);
+  background: var(--branco);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Caixa central que segura o conteúdo (evita o site "grudar" na borda) */
+.container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ------------------------------------------------------------
+   3) TÍTULOS E TEXTOS
+   ------------------------------------------------------------ */
+h1,
+h2,
+h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 7vw, 4.4rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4.2vw, 2.9rem);
+}
+
+.titulo-centro {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+/* Textinho pequeno acima dos títulos ("Quem somos", "Portfólio"...) */
+.titulo-pequeno {
+  font-family: var(--fonte-titulo);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--dourado);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.grade-dois .titulo-pequeno {
+  text-align: left;
+}
+
+.titulo-pequeno.claro {
+  color: var(--dourado-claro);
+}
+
+.paragrafo {
+  color: var(--cinza-texto);
+  margin-top: 16px;
+  max-width: 56ch;
+}
+
+.paragrafo.claro {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.destaque-dourado {
+  color: var(--dourado-claro);
+}
+
+/* ------------------------------------------------------------
+   4) BOTÕES
+   Classes: .botao (base) + .botao-laranja / .botao-vazado
+   ------------------------------------------------------------ */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font-family: var(--fonte-titulo);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.botao-laranja {
+  background: var(--laranja);
+  color: var(--branco);
+  box-shadow: 0 10px 24px rgba(242, 106, 27, 0.32);
+}
+
+.botao-laranja:hover {
+  background: var(--laranja-escuro);
+  transform: translateY(-2px);
+}
+
+.botao-vazado {
+  border-color: var(--dourado);
+  color: var(--branco);
+}
+
+.botao-vazado:hover {
+  background: var(--dourado);
+  color: var(--azul-escuro);
+}
+
+.botao-pequeno {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+}
+
+/* ------------------------------------------------------------
+   5) CABEÇALHO / MENU
+   ------------------------------------------------------------ */
+.cabecalho {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  background: rgba(10, 37, 64, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.35);
+}
+
+.cabecalho-interno {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--branco);
+}
+
+.logo-marca {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--dourado);
+  border-radius: 10px;
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  color: var(--dourado-claro);
+}
+
+.logo-texto strong {
+  display: block;
+  font-family: var(--fonte-titulo);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 1.05rem;
+}
+
+.logo-texto small {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  color: var(--branco);
+  font-size: 0.95rem;
+}
+
+.menu a:not(.botao):hover {
+  color: var(--dourado-claro);
+}
+
+/* Botão "hamburguer" — só aparece no celular */
+.botao-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.botao-menu span {
+  width: 26px;
+  height: 2px;
+  background: var(--branco);
+}
+
+/* ------------------------------------------------------------
+   6) CAPA (HERO)
+   ------------------------------------------------------------ */
+.capa {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 60px;
+  overflow: hidden;
+}
+
+.capa-foto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Camada escura em cima da foto para o texto ficar legível */
+.capa-sombra {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(10, 37, 64, 0.94) 0%,
+    rgba(10, 37, 64, 0.7) 55%,
+    rgba(242, 106, 27, 0.25) 100%
+  );
+}
+
+.capa-conteudo {
+  position: relative;
+  color: var(--branco);
+}
+
+.etiqueta {
+  display: inline-block;
+  font-family: var(--fonte-titulo);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.78rem;
+  color: var(--dourado-claro);
+  border: 1px solid rgba(201, 162, 39, 0.6);
+  border-radius: 999px;
+  padding: 6px 16px;
+  margin-bottom: 22px;
+}
+
+.capa-texto {
+  margin-top: 20px;
+  max-width: 52ch;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1.05rem;
+}
+
+.capa-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+/* Números de destaque da capa */
+.numeros {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 34px;
+  margin-top: 52px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.numeros strong {
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-size: 2.4rem;
+  color: var(--dourado-claro);
+  line-height: 1;
+}
+
+.numeros span {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ------------------------------------------------------------
+   7) SEÇÕES GERAIS
+   ------------------------------------------------------------ */
+.secao {
+  padding: 96px 0;
+}
+
+.secao-azul {
+  background: var(--azul-escuro);
+  color: var(--branco);
+}
+
+.secao-clara {
+  background: var(--azul-claro);
+}
+
+.grade-dois {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* Lista com "check" dourado (seção Sobre) */
+.lista-check {
+  list-style: none;
+  margin-top: 26px;
+  display: grid;
+  gap: 12px;
+}
+
+.lista-check li {
+  position: relative;
+  padding-left: 30px;
+  color: var(--cinza-texto);
+}
+
+.lista-check li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  color: var(--dourado);
+  font-weight: 700;
+}
+
+/* Cartão com o selo de 25 anos */
+.cartao-selo {
+  background: var(--azul-escuro);
+  color: var(--branco);
+  border-radius: var(--canto);
+  padding: 40px 34px;
+  box-shadow: var(--sombra);
+  border-top: 5px solid var(--dourado);
+}
+
+.selo-numero {
+  font-family: var(--fonte-titulo);
+  font-size: 5.5rem;
+  line-height: 0.9;
+  color: var(--dourado-claro);
+}
+
+.selo-texto {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.cartao-selo hr {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 26px 0;
+}
+
+.selo-assinatura {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 10px;
+}
+
+.cartao-selo strong {
+  font-size: 0.82rem;
+  color: var(--dourado-claro);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ------------------------------------------------------------
+   8) CARTÕES DE SERVIÇOS
+   ------------------------------------------------------------ */
+.grade-servicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 22px;
+}
+
+.cartao-servico {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--canto);
+  padding: 30px 26px;
+  transition: 0.25s ease;
+}
+
+.cartao-servico:hover {
+  border-color: var(--dourado);
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.cartao-servico .icone {
+  font-size: 1.9rem;
+  margin-bottom: 14px;
+}
+
+.cartao-servico h3 {
+  font-size: 1.35rem;
+  color: var(--dourado-claro);
+  margin-bottom: 8px;
+}
+
+.cartao-servico p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+}
+
+/* ------------------------------------------------------------
+   9) FILTROS E CARTÕES DAS OBRAS
+   ------------------------------------------------------------ */
+.filtros {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: -20px 0 38px;
+}
+
+.filtro {
+  background: transparent;
+  border: 1px solid var(--cinza-borda);
+  border-radius: 999px;
+  padding: 9px 20px;
+  cursor: pointer;
+  font-family: var(--fonte-titulo);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  color: var(--azul);
+  transition: 0.2s ease;
+}
+
+.filtro:hover {
+  border-color: var(--dourado);
+}
+
+/* O filtro selecionado ganha a classe "ativo" pelo JavaScript */
+.filtro.ativo {
+  background: var(--azul);
+  border-color: var(--azul);
+  color: var(--branco);
+}
+
+.grade-obras {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 26px;
+}
+
+.cartao-obra {
+  border-radius: var(--canto);
+  overflow: hidden;
+  background: var(--branco);
+  box-shadow: 0 10px 26px rgba(10, 37, 64, 0.1);
+  border: 1px solid var(--cinza-borda);
+  transition: 0.25s ease;
+}
+
+.cartao-obra:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra);
+}
+
+.cartao-obra img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.cartao-obra-texto {
+  padding: 22px 24px 26px;
+}
+
+.cartao-obra .categoria {
+  font-family: var(--fonte-titulo);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.74rem;
+  color: var(--laranja);
+}
+
+.cartao-obra h3 {
+  font-size: 1.4rem;
+  margin: 6px 0 8px;
+}
+
+.cartao-obra p {
+  color: var(--cinza-texto);
+  font-size: 0.95rem;
+}
+
+.cartao-obra .ficha {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.cartao-obra .ficha li {
+  background: var(--azul-claro);
+  color: var(--azul);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 0.78rem;
+}
+
+/* ------------------------------------------------------------
+   10) DEPOIMENTOS
+   ------------------------------------------------------------ */
+.grade-depoimentos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+.cartao-depoimento {
+  background: var(--branco);
+  border-radius: var(--canto);
+  padding: 30px 28px;
+  border-left: 4px solid var(--dourado);
+  box-shadow: 0 8px 20px rgba(10, 37, 64, 0.08);
+}
+
+.cartao-depoimento .estrelas {
+  color: var(--dourado);
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.cartao-depoimento p {
+  color: var(--cinza-texto);
+  font-style: italic;
+}
+
+.cartao-depoimento footer {
+  margin-top: 18px;
+  font-size: 0.86rem;
+}
+
+.cartao-depoimento footer strong {
+  display: block;
+  color: var(--azul-escuro);
+}
+
+.cartao-depoimento footer span {
+  color: var(--cinza-texto);
+}
+
+/* ------------------------------------------------------------
+   11) CONTATO E FORMULÁRIO
+   ------------------------------------------------------------ */
+.lista-contato {
+  list-style: none;
+  margin-top: 28px;
+  display: grid;
+  gap: 14px;
+}
+
+.lista-contato li {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.lista-contato .icone {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 10px;
+  background: rgba(201, 162, 39, 0.18);
+  border: 1px solid rgba(201, 162, 39, 0.45);
+}
+
+.formulario {
+  background: var(--branco);
+  color: var(--azul-escuro);
+  border-radius: var(--canto);
+  padding: 32px;
+  display: grid;
+  gap: 16px;
+  box-shadow: var(--sombra);
+  border-top: 5px solid var(--laranja);
+}
+
+.formulario label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--azul);
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  padding: 12px 14px;
+  border: 1px solid var(--cinza-borda);
+  border-radius: 10px;
+  background: #fbfcfe;
+  color: var(--azul-escuro);
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+  outline: 2px solid var(--dourado);
+  border-color: var(--dourado);
+}
+
+.aviso-form {
+  font-size: 0.9rem;
+  color: #1a7f4b;
+  min-height: 20px;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------
+   12) RODAPÉ
+   ------------------------------------------------------------ */
+.rodape {
+  background: #06192c;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 40px 0;
+  font-size: 0.88rem;
+}
+
+.rodape-interno {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rodape .logo-marca {
+  margin-bottom: 8px;
+}
+
+/* ------------------------------------------------------------
+   13) CELULAR E TABLET (responsivo)
+   Tudo o que muda em telas pequenas fica aqui embaixo.
+   ------------------------------------------------------------ */
+@media (max-width: 900px) {
+  .grade-dois {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .secao {
+    padding: 70px 0;
+  }
+
+  .botao-menu {
+    display: flex;
+  }
+
+  /* Menu escondido no celular; ganha a classe "aberto" pelo JS */
+  .menu {
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--azul-escuro);
+    border-bottom: 1px solid rgba(201, 162, 39, 0.35);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .menu.aberto {
+    max-height: 420px;
+  }
+
+  .menu a {
+    padding: 16px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .menu a.botao {
+    margin: 14px 20px 20px;
+    border-top: 0;
+  }
+
+  .numeros {
+    gap: 22px;
+  }
+
+  .numeros li {
+    min-width: 40%;
+  }
+}

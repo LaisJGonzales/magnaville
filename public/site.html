@@ -1,0 +1,264 @@
+<!doctype html>
+<!--
+  ============================================================
+  SITE PORTFÓLIO - CONSTRUTORA ALICERCE & OURO
+  ============================================================
+  OLÁ, DEV! LEIA ISSO PRIMEIRO :)
+
+  Este site é feito com HTML + CSS + JS puros (sem frameworks).
+  São só 3 arquivos que você precisa mexer:
+
+  1) public/site.html   -> este arquivo (o TEXTO e a ESTRUTURA do site)
+  2) public/css/estilo.css -> as CORES, fontes, tamanhos (a aparência)
+  3) public/js/scripts.js  -> os DADOS (obras, serviços, contato) e a interação
+
+  Para trocar textos: mude direto aqui embaixo.
+  Para trocar cores: abra o estilo.css e mexa só na parte ":root".
+  Para trocar as obras/serviços: abra o scripts.js e edite as listas.
+  Para trocar as fotos: substitua os arquivos em public/imagens/.
+  ============================================================
+-->
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- ===== SEO: título e descrição que aparecem no Google ===== -->
+    <title>Alicerce & Ouro | Construtora de Obras Residenciais e Comerciais</title>
+    <meta
+      name="description"
+      content="Construtora Alicerce & Ouro: 25 anos executando obras residenciais, comerciais e reformas de alto padrão com prazo e orçamento respeitados."
+    />
+    <meta property="og:title" content="Alicerce & Ouro | Construtora" />
+    <meta
+      property="og:description"
+      content="Portfólio de obras residenciais, comerciais e reformas de alto padrão."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/imagens/capa.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- ===== Fontes do Google (pode trocar por outras se quiser) ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ===== Nosso arquivo de estilos (as cores estão lá dentro) ===== -->
+    <link rel="stylesheet" href="/css/estilo.css" />
+  </head>
+
+  <body>
+    <!-- ============================================================
+         CABEÇALHO / MENU
+         Para adicionar um item no menu: copie uma linha <a> abaixo.
+         O "#" leva para a seção com o mesmo id na página.
+         ============================================================ -->
+    <header class="cabecalho" id="cabecalho">
+      <div class="container cabecalho-interno">
+        <a class="logo" href="#topo">
+          <span class="logo-marca">A&amp;O</span>
+          <span class="logo-texto">
+            <strong>Alicerce &amp; Ouro</strong>
+            <small>Construtora desde 1999</small>
+          </span>
+        </a>
+
+        <nav class="menu" id="menu">
+          <a href="#sobre">Sobre</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#obras">Obras</a>
+          <a href="#depoimentos">Clientes</a>
+          <a href="#contato" class="botao botao-laranja botao-pequeno">Orçamento</a>
+        </nav>
+
+        <!-- Botão que abre o menu no celular (funciona pelo scripts.js) -->
+        <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="topo">
+      <!-- ============================================================
+           SEÇÃO 1 - CAPA (HERO)
+           Troque o título, o texto e a foto de fundo aqui.
+           ============================================================ -->
+      <section class="capa">
+        <img class="capa-foto" src="/imagens/capa.jpg" alt="Edifício em construção ao pôr do sol" />
+        <div class="capa-sombra"></div>
+
+        <div class="container capa-conteudo">
+          <p class="etiqueta">Engenharia • Construção • Incorporação</p>
+          <h1>
+            Construímos obras que<br />
+            <span class="destaque-dourado">valorizam</span> o seu patrimônio.
+          </h1>
+          <p class="capa-texto">
+            Do projeto à entrega das chaves: mais de 180 obras concluídas com prazo cumprido,
+            orçamento transparente e acabamento de alto padrão.
+          </p>
+
+          <div class="capa-botoes">
+            <a href="#obras" class="botao botao-laranja">Ver nossas obras</a>
+            <a href="#contato" class="botao botao-vazado">Falar com um engenheiro</a>
+          </div>
+
+          <!-- Os números abaixo são preenchidos pelo scripts.js (lista NUMEROS) -->
+          <ul class="numeros" id="listaNumeros"></ul>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SEÇÃO 2 - SOBRE A EMPRESA
+           ============================================================ -->
+      <section class="secao" id="sobre">
+        <div class="container grade-dois">
+          <div>
+            <p class="titulo-pequeno">Quem somos</p>
+            <h2>Uma construtora de bairro que cresceu sem perder o cuidado artesanal.</h2>
+            <p class="paragrafo">
+              A Alicerce &amp; Ouro nasceu em 1999 em uma pequena sala com dois engenheiros e uma
+              prancheta. Hoje somos uma equipe de 84 profissionais entre engenharia, arquitetura e
+              obra, mas mantivemos o mesmo hábito: o responsável técnico visita cada canteiro toda
+              semana.
+            </p>
+            <p class="paragrafo">
+              Trabalhamos com cronograma aberto ao cliente, medições fotografadas e relatório mensal
+              de custos. Sem surpresa no fim do mês.
+            </p>
+
+            <!-- Lista de diferenciais (editável direto aqui) -->
+            <ul class="lista-check">
+              <li>Contrato com prazo e multa por atraso</li>
+              <li>Relatório fotográfico semanal da obra</li>
+              <li>Equipe própria — não terceirizamos a estrutura</li>
+              <li>Garantia de 5 anos na estrutura e impermeabilização</li>
+            </ul>
+          </div>
+
+          <div class="cartao-selo">
+            <div class="selo-numero">25</div>
+            <p class="selo-texto">anos construindo em toda a região metropolitana</p>
+            <hr />
+            <p class="selo-assinatura">
+              “Obra boa é obra que você esquece depois de entregue, porque nunca dá problema.”
+            </p>
+            <strong>Eng. Marta Rezende — CREA 1234567</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SEÇÃO 3 - SERVIÇOS
+           Os cartões são criados pelo scripts.js (lista SERVICOS).
+           ============================================================ -->
+      <section class="secao secao-azul" id="servicos">
+        <div class="container">
+          <p class="titulo-pequeno claro">O que fazemos</p>
+          <h2 class="titulo-centro">Serviços de ponta a ponta</h2>
+          <div class="grade-servicos" id="listaServicos"></div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SEÇÃO 4 - PORTFÓLIO DE OBRAS
+           Os cartões e os filtros vêm do scripts.js (lista OBRAS).
+           ============================================================ -->
+      <section class="secao" id="obras">
+        <div class="container">
+          <p class="titulo-pequeno">Portfólio</p>
+          <h2 class="titulo-centro">Obras entregues</h2>
+
+          <!-- Botões de filtro (criados automaticamente) -->
+          <div class="filtros" id="listaFiltros"></div>
+
+          <!-- Cartões das obras -->
+          <div class="grade-obras" id="listaObras"></div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SEÇÃO 5 - DEPOIMENTOS
+           Vem do scripts.js (lista DEPOIMENTOS).
+           ============================================================ -->
+      <section class="secao secao-clara" id="depoimentos">
+        <div class="container">
+          <p class="titulo-pequeno">Clientes</p>
+          <h2 class="titulo-centro">Quem já construiu com a gente</h2>
+          <div class="grade-depoimentos" id="listaDepoimentos"></div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           SEÇÃO 6 - CONTATO / ORÇAMENTO
+           O formulário NÃO envia e-mail ainda: ele só mostra uma mensagem
+           de confirmação na tela (veja a função no scripts.js).
+           ============================================================ -->
+      <section class="secao secao-azul" id="contato">
+        <div class="container grade-dois">
+          <div>
+            <p class="titulo-pequeno claro">Contato</p>
+            <h2>Vamos conversar sobre a sua obra</h2>
+            <p class="paragrafo claro">
+              Conte o que você quer construir. Em até 1 dia útil um engenheiro liga para entender o
+              terreno, o prazo e a faixa de investimento.
+            </p>
+
+            <!-- Estes dados vêm do scripts.js (objeto CONTATO) -->
+            <ul class="lista-contato" id="listaContato"></ul>
+          </div>
+
+          <form class="formulario" id="formularioOrcamento">
+            <label>
+              Seu nome
+              <input type="text" name="nome" required placeholder="Ex.: Ana Paula" />
+            </label>
+            <label>
+              E-mail ou WhatsApp
+              <input type="text" name="contato" required placeholder="(11) 99999-0000" />
+            </label>
+            <label>
+              Tipo de obra
+              <select name="tipo">
+                <option>Casa residencial</option>
+                <option>Edifício / condomínio</option>
+                <option>Obra comercial</option>
+                <option>Reforma / retrofit</option>
+              </select>
+            </label>
+            <label>
+              Conte um pouco sobre o projeto
+              <textarea name="mensagem" rows="4" placeholder="Terreno, metragem, prazo..."></textarea>
+            </label>
+            <button type="submit" class="botao botao-laranja">Pedir orçamento</button>
+
+            <!-- Aqui aparece a mensagem de sucesso -->
+            <p class="aviso-form" id="avisoForm"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================================
+         RODAPÉ
+         ============================================================ -->
+    <footer class="rodape">
+      <div class="container rodape-interno">
+        <div>
+          <strong class="logo-marca">A&amp;O</strong>
+          <p>Alicerce &amp; Ouro Engenharia e Construções Ltda • CNPJ 00.000.000/0001-00</p>
+        </div>
+        <p class="rodape-copy">
+          © <span id="anoAtual"></span> Alicerce &amp; Ouro. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- O JavaScript vai no final para o site aparecer mais rápido -->
+    <script src="/js/scripts.js"></script>
+  </body>
+</html>
