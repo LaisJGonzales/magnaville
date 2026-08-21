@@ -19,10 +19,10 @@
    Aparecem embaixo dos botões na primeira tela.
    ------------------------------------------------------------ */
 const NUMEROS = [
-  { valor: "180+", rotulo: "obras entregues" },
-  { valor: "25", rotulo: "anos de mercado" },
-  { valor: "84", rotulo: "profissionais" },
-  { valor: "98%", rotulo: "obras no prazo" },
+  { valor: "", rotulo: "obras entregues" },
+  { valor: "", rotulo: "topo de mercado" },
+  { valor: "", rotulo: "profissionais familiares" },
+  { valor: "", rotulo: "obras no prazo" },
 ];
 
 /* ------------------------------------------------------------
