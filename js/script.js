@@ -1,5 +1,5 @@
 /* ============================================================
-   JAVASCRIPT DO SITE - CONSTRUTORA ALICERCE & OURO
+   JAVASCRIPT DO SITE - CONSTRUTORA Magnaville
    ============================================================
    ESTE É O "MIOLO" DO SITE (o seu mini back-end).
 
@@ -77,52 +77,52 @@ const SERVICOS = [
    ------------------------------------------------------------ */
 const OBRAS = [
   {
-    titulo: "Residencial Aurora",
+    titulo: "...",
     categoria: "Residencial",
-    foto: "/imagens/obra-1.jpg",
+    foto: "...",
     descricao:
-      "Edifício de 6 pavimentos com 24 apartamentos, estrutura em concreto armado e fachada ventilada.",
-    ficha: ["3.400 m²", "18 meses", "Bairro Jardim Real"],
+      "Colocar portifolio",
+    ficha: ["..."],
   },
   {
-    titulo: "Edifício Corporativo Ipê",
+    titulo: "...",
     categoria: "Comercial",
-    foto: "/imagens/obra-2.jpg",
+    foto: "...",
     descricao:
-      "Sede corporativa com pele de vidro, certificação de eficiência energética e 3 subsolos de garagem.",
-    ficha: ["9.100 m²", "26 meses", "Centro Empresarial"],
+      "Colocar portifolio",
+    ficha: ["..."],
   },
   {
-    titulo: "Casa Mirante do Lago",
+    titulo: "...",
     categoria: "Alto padrão",
-    foto: "/imagens/obra-3.jpg",
+    foto: "...",
     descricao:
-      "Residência de alto padrão com piscina de borda infinita, automação completa e laje protendida.",
-    ficha: ["620 m²", "14 meses", "Condomínio Lago Azul"],
+      "Colocar portifolio",
+    ficha: ["..."],
   },
   {
-    titulo: "Retrofit Galeria Central",
+    titulo: "...",
     categoria: "Reforma",
-    foto: "/imagens/obra-2.jpg",
+    foto: "...",
     descricao:
-      "Modernização de galeria comercial dos anos 70: reforço estrutural, nova fachada e instalações refeitas.",
-    ficha: ["2.150 m²", "9 meses", "Rua XV de Novembro"],
+      "Colocar portifolio",
+    ficha: ["..."],
   },
   {
-    titulo: "Condomínio Vila Dourada",
+    titulo: "...",
     categoria: "Residencial",
-    foto: "/imagens/obra-1.jpg",
+    foto: "...",
     descricao:
-      "Doze casas geminadas com área de lazer comum, entregues em duas fases sem atraso no cronograma.",
-    ficha: ["4.800 m²", "22 meses", "Zona Sul"],
+      "Colocar portifolio",
+    ficha: ["..."],
   },
   {
-    titulo: "Casa Pátio Sereno",
+    titulo: "...",
     categoria: "Alto padrão",
-    foto: "/imagens/obra-3.jpg",
+    foto: "...",
     descricao:
-      "Casa térrea de pátio interno, com estrutura metálica aparente e grandes vãos envidraçados.",
-    ficha: ["410 m²", "11 meses", "Alphaville"],
+      "Colocar portifolio",
+    ficha: ["..."],
   },
 ];
 
@@ -130,7 +130,7 @@ const OBRAS = [
    4) DEPOIMENTOS DE CLIENTES
    estrelas: um número de 1 a 5
    ------------------------------------------------------------ */
-const DEPOIMENTOS = [
+/*const DEPOIMENTOS = [
   {
     texto:
       "Entregaram a obra 3 semanas antes do prazo e com o orçamento fechado. O relatório semanal com fotos me deixou tranquila morando em outra cidade.",
@@ -153,17 +153,17 @@ const DEPOIMENTOS = [
     estrelas: 4,
   },
 ];
-
+*/
 /* ------------------------------------------------------------
    5) DADOS DE CONTATO
    Troque telefone, e-mail e endereço aqui.
    ------------------------------------------------------------ */
 const CONTATO = [
-  { icone: "📞", texto: "(11) 4002-8922" },
-  { icone: "💬", texto: "WhatsApp (11) 99876-5432" },
-  { icone: "✉️", texto: "obras@alicerceouro.com.br" },
-  { icone: "📍", texto: "Av. das Construções, 1250 — sala 704" },
-  { icone: "🕗", texto: "Seg a sex, 8h às 18h" },
+  { icone: "📞", texto: "(47) 9 9655-8233" },
+  { icone: "💬", texto: "WhatsApp (47) 9 9655-8233" },
+  { icone: "✉️", texto: "magnaville.ilht@gmail.com" },
+  { icone: "📍", texto: "R. Gercino José Corrêa, 163 - Cordeiros, Itajaí/SC" },
+  { icone: "🕗", texto: "Seg a domingo, 8h às 18h" },
 ];
 
 /* ============================================================
