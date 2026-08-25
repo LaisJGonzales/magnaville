@@ -123,6 +123,7 @@ h2 {
   color: var(--cinza-texto);
   margin-top: 16px;
   max-width: 56ch;
+  text-align: justify;
 }
 
 .paragrafo.claro {
@@ -407,7 +408,7 @@ h2 {
   border-top: 5px solid var(--dourado);
 }
 
-.selo-numero {
+.selo-destaque {
   font-family: var(--fonte-titulo);
   font-size: 5.5rem;
   line-height: 0.9;
@@ -480,7 +481,7 @@ h2 {
 }
 
 /* ------------------------------------------------------------
-   9) FILTROS E CARTÕES DAS OBRAS
+   9) FILTROS E CARTÕES DAS Projetos
    ------------------------------------------------------------ */
 .filtros {
   display: flex;
@@ -515,7 +516,7 @@ h2 {
   color: var(--branco);
 }
 
-.grade-obras {
+.grade-Projetos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 26px;
@@ -580,9 +581,9 @@ h2 {
 }
 
 /* ------------------------------------------------------------
-   10) DEPOIMENTOS
+   10) PROFISSIONAIS
    ------------------------------------------------------------ */
-.grade-depoimentos {
+.grade-profissionais {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 22px;

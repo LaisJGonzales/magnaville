@@ -1,17 +1,7 @@
 /* ============================================================
    JAVASCRIPT DO SITE - CONSTRUTORA Magnaville
    ============================================================
-   ESTE É O "MIOLO" DO SITE (o seu mini back-end).
-
-   Toda a informação que muda com frequência (obras, serviços,
-   depoimentos, telefone, e-mail) está guardada em LISTAS aqui em cima.
-   Você edita a lista e o site se atualiza sozinho — não precisa
-   mexer no HTML.
-
-   Regras simples para não quebrar nada:
-   - Cada item fica dentro de { chaves } e separado por vírgula.
-   - Texto sempre entre "aspas".
-   - O último item da lista NÃO precisa de vírgula depois.
+   (o seu mini back-end
    ============================================================ */
 
 /* ------------------------------------------------------------
@@ -19,10 +9,10 @@
    Aparecem embaixo dos botões na primeira tela.
    ------------------------------------------------------------ */
 const NUMEROS = [
-  { valor: "", rotulo: "obras entregues" },
-  { valor: "", rotulo: "topo de mercado" },
-  { valor: "", rotulo: "profissionais familiares" },
-  { valor: "", rotulo: "obras no prazo" },
+  { valor: "qualidade", rotulo: "do inicio ao fim" },
+  { valor: "garantia", rotulo: " de satisfação" },
+  { valor: "equipe experiente", rotulo: "profissionais familiares" },
+  { valor: "prazos cumpridos", rotulo: "com responsabilidade" },
 ];
 
 /* ------------------------------------------------------------
@@ -44,7 +34,7 @@ const SERVICOS = [
   },
   {
     icone: "🏠",
-    titulo: "Reformas e retrofit",
+    titulo: "Reformas",
     descricao:
       "Modernização de imóveis antigos, reforço estrutural, troca de instalações e fachada nova sem esvaziar o prédio.",
   },
@@ -69,68 +59,111 @@ const SERVICOS = [
 ];
 
 /* ------------------------------------------------------------
-   3) OBRAS DO PORTFÓLIO
+   3) PROJETOS DO PORTFÓLIO
    categoria: usada nos botões de filtro. Se você criar uma nova
    categoria aqui, o botão dela aparece automaticamente.
-   foto: caminho do arquivo dentro da pasta public/imagens/
+  foto: caminho relativo do arquivo dentro da pasta imagens/
    ficha: pequenas etiquetas (metragem, prazo, local...)
    ------------------------------------------------------------ */
-const OBRAS = [
+const PROJETOS = [
   {
-    titulo: "...",
-    categoria: "Residencial",
-    foto: "...",
+    titulo: "Conceitual Arquitetônico",
+    categoria: "Arquitetônico",
+    foto: "imagens/conceitual-arquitetonico.jpeg",
     descricao:
-      "Colocar portifolio",
-    ficha: ["..."],
+      "Um desenho pronto de como ficará a obra.",
+    ficha: ["casinha"],
   },
-  {
-    titulo: "...",
-    categoria: "Comercial",
-    foto: "...",
+    {
+    titulo: "Planta Baixa",
+    categoria: "Arquitetônico",
+    foto: "imagens/planta-baixa.jpeg",
     descricao:
-      "Colocar portifolio",
-    ficha: ["..."],
+      "O Layout da obra, mostrando a distribuição dos ambientes.",
+    ficha: ["planta baixa"],
   },
+
+     {
+    titulo: "Renderização 3D",
+    categoria: "Arquitetônico",
+    foto: "imagens/renderizacao.jpeg",
+    descricao:
+      "Visualização 3D da planta .",
+    ficha: ["Renderização 3D"],
+  },
+
+ 
   {
-    titulo: "...",
+    titulo: "Fundação",
+    categoria: "Construções",
+    foto: "imagens/fundacao-sapata-corrida.jpeg",
+    descricao:
+      "Fundação em sapata corrida",
+    ficha: ["60 cm x 40 cm"],
+  },
+
+    {
+    titulo: "Escarificação",
+    categoria: "Construções",
+    foto: "imagens/escarificacao.jpeg",
+    descricao:
+      "Escarificação do terreno para a contrução de dois pavimentos.",
+    ficha: [" 5m x 20m "],
+  },
+
+      {
+    titulo: "Terraplanagem",
+    categoria: "Construções",
+    foto: "imagens/terraplanagem.jpeg",
+    descricao:
+      "Terraplanagem do terreno para a contrução de dois pavimentos.",
+    ficha: [" 5m x 20m "],
+  },
+
+]
+ /*{   
+  titulo: "...",
     categoria: "Alto padrão",
-    foto: "...",
-    descricao:
-      "Colocar portifolio",
-    ficha: ["..."],
-  },
-  {
-    titulo: "...",
-    categoria: "Reforma",
-    foto: "...",
-    descricao:
-      "Colocar portifolio",
-    ficha: ["..."],
-  },
-  {
-    titulo: "...",
-    categoria: "Residencial",
-    foto: "...",
-    descricao:
-      "Colocar portifolio",
-    ficha: ["..."],
-  },
-  {
-    titulo: "...",
-    categoria: "Alto padrão",
-    foto: "...",
+    foto: "imagens/obra-2.jpg",
     descricao:
       "Colocar portifolio",
     ficha: ["..."],
   },
 ];
 
+ {
+    titulo: "...",
+    categoria: "Reforma",
+    foto: "imagens/obra-3.jpg",
+    descricao:
+      "Colocar portifolio",
+    ficha: ["..."],
+  },
+
+    titulo: "...",
+    categoria: "Comercial",
+    foto: "imagens/obra-1.jpg",
+    descricao:
+      "Colocar portifolio",
+    ficha: ["..."],
+  },
+  {
+    titulo: "...",
+    categoria: "Alto padrão",
+    foto: "imagens/obra-2.jpg",
+    descricao:
+      "Colocar portifolio",
+    ficha: ["..."],
+  },
+
+
+*/
+
 /* ------------------------------------------------------------
-   4) DEPOIMENTOS DE CLIENTES
-   estrelas: um número de 1 a 5
+   NOVO 4) Apresentação dos profissionais
    ------------------------------------------------------------ */
-/*const DEPOIMENTOS = [
+
+  const PROFSSIONAIS = [
   {
     texto:
       "Entregaram a obra 3 semanas antes do prazo e com o orçamento fechado. O relatório semanal com fotos me deixou tranquila morando em outra cidade.",
@@ -153,7 +186,9 @@ const OBRAS = [
     estrelas: 4,
   },
 ];
-*/
+
+
+
 /* ------------------------------------------------------------
    5) DADOS DE CONTATO
    Troque telefone, e-mail e endereço aqui.
@@ -197,21 +232,21 @@ function montarServicos() {
 
 /* ---------- Monta os cartões de obras ----------
    filtro = "Todas" mostra tudo; qualquer outro valor mostra
-   só as obras daquela categoria.                          */
-function montarObras(filtro) {
-  const escolhidas = filtro === "Todas" ? OBRAS : OBRAS.filter((o) => o.categoria === filtro);
+   só os projetos daquela categoria.                          */
+function montarProjetos(filtro) {
+  const escolhidos = filtro === "Todas" ? PROJETOS : PROJETOS.filter((p) => p.categoria === filtro);
 
-  pegar("listaObras").innerHTML = escolhidas
+  pegar("listaProjetos").innerHTML = escolhidos
     .map(
-      (obra) => `
+      (projeto) => `
       <article class="cartao-obra">
-        <img src="${obra.foto}" alt="${obra.titulo}" loading="lazy" />
+        <img src="${projeto.foto}" alt="${projeto.titulo}" loading="lazy" />
         <div class="cartao-obra-texto">
-          <p class="categoria">${obra.categoria}</p>
-          <h3>${obra.titulo}</h3>
-          <p>${obra.descricao}</p>
+          <p class="categoria">${projeto.categoria}</p>
+          <h3>${projeto.titulo}</h3>
+          <p>${projeto.descricao}</p>
           <ul class="ficha">
-            ${obra.ficha.map((dado) => `<li>${dado}</li>`).join("")}
+            ${projeto.ficha.map((dado) => `<li>${dado}</li>`).join("")}
           </ul>
         </div>
       </article>`,
@@ -220,9 +255,9 @@ function montarObras(filtro) {
 }
 
 /* ---------- Monta os botões de filtro ----------
-   As categorias são descobertas sozinhas a partir da lista OBRAS. */
+   As categorias são descobertas sozinhas a partir da lista PROJETOS. */
 function montarFiltros() {
-  const categorias = ["Todas", ...new Set(OBRAS.map((obra) => obra.categoria))];
+  const categorias = ["Todas", ...new Set(PROJETOS.map((projeto) => projeto.categoria))];
 
   pegar("listaFiltros").innerHTML = categorias
     .map(
@@ -238,15 +273,15 @@ function montarFiltros() {
 
     document.querySelectorAll(".filtro").forEach((b) => b.classList.remove("ativo"));
     botao.classList.add("ativo");
-    montarObras(botao.dataset.categoria);
+    montarProjetos(botao.dataset.categoria);
   });
 }
 
-/* ---------- Monta os depoimentos ---------- */
-function montarDepoimentos() {
-  pegar("listaDepoimentos").innerHTML = DEPOIMENTOS.map(
+/* ---------- Monta os profissionais ---------- */
+function montarProfissionais() {
+  pegar("listaProfissionais").innerHTML = PROFSSIONAIS.map(
     (item) => `
-      <article class="cartao-depoimento">
+      <article class="cartao-profissional">
         <div class="estrelas">${"★".repeat(item.estrelas)}${"☆".repeat(5 - item.estrelas)}</div>
         <p>“${item.texto}”</p>
         <footer>
@@ -305,8 +340,8 @@ document.addEventListener("DOMContentLoaded", () => {
   montarNumeros();
   montarServicos();
   montarFiltros();
-  montarObras("Todas");
-  montarDepoimentos();
+  montarProjetos("Todas");
+  montarProfissionais();
   montarContato();
   ligarMenu();
   ligarFormulario();

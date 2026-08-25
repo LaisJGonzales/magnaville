@@ -50,8 +50,8 @@
         <nav class="menu" id="menu">
           <a href="#sobre">Sobre</a>
           <a href="#servicos">Serviços</a>
-          <a href="#obras">Obras</a>
-          <a href="#depoimentos">Clientes</a>
+          <a href="#Projetos">Projetos</a>
+          <a href="#apresentacao">Profissionais</a>
           <a href="#contato" class="botao botao-laranja botao-pequeno">Orçamento</a>
         </nav>
 
@@ -83,7 +83,7 @@
           </p>
 
           <div class="capa-botoes">
-            <a href="#obras" class="botao botao-laranja">Ver nossas obras</a>
+            <a href="#projetos" class="botao botao-laranja">Ver nossos projetos</a>
             <a href="#contato" class="botao botao-vazado">Falar com um engenheiro</a>
           </div>
 
@@ -101,28 +101,33 @@
             <p class="titulo-pequeno">Quem somos</p>
             <h2>Uma construtora de bairro que cresceu sem perder o cuidado artesanal.</h2>
             <p class="paragrafo">
-              A Magnaville &amp; Serviços é uma construtora nasceu do sonho de um homem que cresceu no campo de obras, como ajudante, pedreiro, mestre de obras e por fim, bacharel em engenharia civil. Crescemos sem perder o cuidado artesanal. Executamos obras residenciais, comerciais e reformas de alto padrão, com prazo e orçamento respeitados.
+              A Magnaville &amp; Serviços Ltda. é uma empresa especializada em construção civil, reformas e manutenção, comprometida com a qualidade, segurança, organização e cumprimento de prazos. 
+              
+              Sob a responsabilidade técnica de Leonardo Gonzales, Bacharel em Engenharia Civil, desenvolvemos soluções completas para obras e empreendimentos, oferecendo atendimento personalizado e acompanhamento técnico em todas as etapas do projeto.
+
+              Como diferencial, aplicamos a metodologia Lean Construcción, baseada nos princípios do Sistema Toyota de Produção, que proporciona maior eficiência na gestão das obras, reduzindo desperdícios, otimizando recursos e garantindo mais produtividade e qualidade na execução dos serviços.
+
             </p>
             <p class="paragrafo">
-              Trabalhamos com cronograma aberto ao cliente, medições fotografadas e relatório mensal
-              de custos. Sem surpresa no fim do mês.
+              Trabalhamos com cronograma aberto ao cliente, medições fotografadas e relatório mensal de custos. Sem surpresa no fim do mês.
             </p>
 
-            <!-- Lista de diferenciais (editável direto aqui) -->
+            <!-- Lista de diferenciais  -->
             <ul class="lista-check">
-              <li>Contrato com prazo e multa por atraso</li>
-              <li>Relatório fotográfico semanal da obra</li>
+              <li>Metodologia Lean Construcción</li>
+              <li>Relatório fotográfico semanal</li>
+              <li>Fazemos Linha de balanço para você acompanhar</li>
               <li>Equipe própria — não terceirizamos a estrutura</li>
             </ul>
           </div>
 
           <div class="cartao-selo">
-            <div class="selo-numero">25</div>
+            <div class="selo-destaque">Confiabilidade</div>
             <hr />
             <p class="selo-assinatura">
-              “Obra boa é obra que você esquece depois de entregue, porque nunca dá problema.”
+              “Obra boa é obra que você acompanha do inicio ao fim”
             </p>
-            <strong>Eng. Marta Rezende — CREA 1234567</strong>
+            <strong>Eng. Leonardo Gonzales</strong>
           </div>
         </div>
       </section>
@@ -140,33 +145,39 @@
       </section>
 
       <!-- ============================================================
-           SEÇÃO 4 - PORTFÓLIO DE OBRAS
-           Os cartões e os filtros vêm do scripts.js (lista OBRAS).
+           SEÇÃO 4 - PORTFÓLIO DE PROJETOS
+           Os cartões e os filtros vêm do scripts.js (lista PROJETOS).
            ============================================================ -->
-      <section class="secao" id="obras">
+      <section class="secao" id="Projetos">
         <div class="container">
           <p class="titulo-pequeno">Portfólio</p>
-          <h2 class="titulo-centro">Obras entregues</h2>
+          <h2 class="titulo-centro">Nossos projetos</h2>
 
           <!-- Botões de filtro (criados automaticamente) -->
           <div class="filtros" id="listaFiltros"></div>
 
-          <!-- Cartões das obras -->
-          <div class="grade-obras" id="listaObras"></div>
+          <!-- Cartões dos projetos -->
+          <div class="grade-Projetos" id="listaProjetos"></div>
         </div>
       </section>
 
+
       <!-- ============================================================
-           SEÇÃO 5 - DEPOIMENTOS
-           Vem do scripts.js (lista DEPOIMENTOS).
+           NOVA SEÇÃO 5 - Apresentação de profissionais
+           Vem do scripts.js (lista profissionais).
            ============================================================ -->
-      <section class="secao secao-clara" id="depoimentos">
+     <section class="secao secao-clara" id="Profissionais">
         <div class="container">
-          <p class="titulo-pequeno">Clientes</p>
-          <h2 class="titulo-centro">Quem já construiu com a gente</h2>
-          <div class="grade-depoimentos" id="listaDepoimentos"></div>
+          <p class="titulo-pequeno">Profissionais</p>
+          <h2 class="titulo-centro">Conheça nossa equipe</h2>
+          <div class="grade-apresentacao" id="listaProfissionais"></div>
         </div>
-      </section>
+      </section> 
+
+
+
+
+
 
       <!-- ============================================================
            SEÇÃO 6 - CONTATO / ORÇAMENTO
@@ -202,7 +213,7 @@
                 <option>Casa residencial</option>
                 <option>Edifício / condomínio</option>
                 <option>Obra comercial</option>
-                <option>Reforma / retrofit</option>
+                <option>Reformas</option>
               </select>
             </label>
             <label>
