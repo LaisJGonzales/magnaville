@@ -194,6 +194,15 @@ const PROJETOS = [
 
     {
     texto:
+      "Laís é a nossa desenvolvedora web e de software. Cursando Engenharia da Computação, ela faz toda a parte de programação e sistemas da magnaville.",
+      foto: "imagens/Lais-Gonzales.jpeg",
+    nome: "Laís Gonzales",
+    cargo: "Desenvolvedora Web e Software",
+
+  },
+
+    {
+    texto:
       "Lennon é um <strong>Eletricista Prático</strong>, com negocio próprio -Gonzales Serviços Eléticos-  parceiro da Magnaville. Possui noções elétricas elogiadas por varios clientes.",
       foto: "imagens/Lennon-Gonzales.jpeg",
     nome: "Lennon Gonzales",
@@ -201,14 +210,6 @@ const PROJETOS = [
 
   },
 
-  {
-    texto:
-      "Laís é a nossa desenvolvedora web e de software. Cursando Engenharia da Computação, ela faz toda a parte de programação e sistemas da magnaville.",
-      foto: "imagens/Lais-Gonzales.jpeg",
-    nome: "Laís Gonzales",
-    cargo: "Desenvolvedora Web e Software",
-
-  },
 ];
 
 
