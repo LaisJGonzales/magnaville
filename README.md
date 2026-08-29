@@ -15,4 +15,4 @@ Basta abrir `index.html` no navegador. Não precisa de Node, npm, Vite, React ou
 ## Onde editar
 - Textos e estrutura: `index.html`
 - Cores, tamanhos e layout: `css/style.css`
-- Serviços, obras, depoimentos e contatos: `js/script.js`
+- Serviços, obras, profissionaiss e contatos: `js/script.js`

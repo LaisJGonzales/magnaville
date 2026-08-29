@@ -589,7 +589,10 @@ h2 {
   gap: 22px;
 }
 
-.cartao-depoimento {
+.cartao-profissional {
+  display: flex;
+  align-items: center;
+  gap: 22px;
   background: var(--branco);
   border-radius: var(--canto);
   padding: 30px 28px;
@@ -597,28 +600,44 @@ h2 {
   box-shadow: 0 8px 20px rgba(10, 37, 64, 0.08);
 }
 
-.cartao-depoimento .estrelas {
-  color: var(--dourado);
-  letter-spacing: 3px;
-  margin-bottom: 12px;
+.cartao-profissional .foto {
+  flex-shrink: 0;
 }
 
-.cartao-depoimento p {
+.cartao-profissional .foto img {
+  width: 200px;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+.cartao-profissional .conteudo-profissional {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cartao-profissional p {
+  margin: 0;
   color: var(--cinza-texto);
   font-style: italic;
+  text-align: left;
+  line-height: 1.7;
 }
 
-.cartao-depoimento footer {
+.cartao-profissional footer {
   margin-top: 18px;
   font-size: 0.86rem;
 }
 
-.cartao-depoimento footer strong {
+.cartao-profissional footer strong {
   display: block;
   color: var(--azul-escuro);
 }
 
-.cartao-depoimento footer span {
+.cartao-profissional footer span {
   color: var(--cinza-texto);
 }
 

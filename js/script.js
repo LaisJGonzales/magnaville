@@ -164,26 +164,50 @@ const PROJETOS = [
    ------------------------------------------------------------ */
 
   const PROFSSIONAIS = [
+
+
   {
     texto:
-      "Entregaram a obra 3 semanas antes do prazo e com o orçamento fechado. O relatório semanal com fotos me deixou tranquila morando em outra cidade.",
-    nome: "Cláudia Ferraz",
-    cargo: "Proprietária — Casa Mirante do Lago",
-    estrelas: 5,
+      "Nosso Engenheiro civil, e CEO da Magnaville, é um profissional com mais de 30 anos de experiência na area de construção. Desde pequeno, ele já ajudava seu pai no campo de obras, logo, atuou como mestre de obras na construtora de seu irmão mais velho, foi chefe de manutenção de uma multinacional até que terminou seu bacharelado em Engenharia Civil, e fundou a Magnaville.",
+      foto: "imagens/Leonardo-Gonzales.jpeg",
+    nome: "Leonardo Gonzales",
+    cargo: "Engenheiro Civil | CEO",
+
   },
-  {
+
+    {
     texto:
-      "Trabalhamos juntos em três empreendimentos. A engenharia deles resolve problema em obra sem repassar custo escondido para o incorporador.",
-    nome: "Rogério Salles",
-    cargo: "Diretor — Salles Incorporadora",
-    estrelas: 5,
+      "Rosângela Maria é a diretora administrativa da Magnaville, responsável pelos orçamentos, conferências de prazos e demais rotinas burocraticas, formada em serviço social, cursando gestão de processos gerênciais.",
+      foto: "imagens/Rosangela-Maria.jpeg",
+    nome: "Rosângela Maria",
+    cargo: "Diretora Administrativa",
   },
+
   {
     texto:
-      "Reformaram nossa galeria com as lojas abertas. Poeira controlada, obra limpa e nenhum lojista reclamou de barulho fora de hora.",
-    nome: "Síndico Paulo Menezes",
-    cargo: "Galeria Central",
-    estrelas: 4,
+      "Nossa talentosa desenhista de 17 anos, desde cedo, vem aprimorando sua técnica com o incentivo de seu pai, Leonardo Gonzales. Hoje, ela domina o software sketchup, a arte de design de interior renderizado. Futuramente, será uma Arquiteta de renome. (Letícia faz <strong>Conceituais Arquitetônicos</strong>)",
+      foto: "imagens/Leticia-Gonzales.jpeg",
+    nome: "Leticia Gonzales",
+    cargo: "Desenhista Arquitetônica",
+
+  },
+
+    {
+    texto:
+      "Lennon é um <strong>Eletricista Prático</strong>, com negocio próprio -Gonzales Serviços Eléticos-  parceiro da Magnaville. Possui noções elétricas elogiadas por varios clientes.",
+      foto: "imagens/Lennon-Gonzales.jpeg",
+    nome: "Lennon Gonzales",
+    cargo: "Parceiro | Eletricista Prático",
+
+  },
+
+  {
+    texto:
+      "Laís é a nossa desenvolvedora web e de software. Cursando Engenharia da Computação, ela faz toda a parte de programação e sistemas da magnaville.",
+      foto: "imagens/Lais-Gonzales.jpeg",
+    nome: "Laís Gonzales",
+    cargo: "Desenvolvedora Web e Software",
+
   },
 ];
 
@@ -280,14 +304,18 @@ function montarFiltros() {
 /* ---------- Monta os profissionais ---------- */
 function montarProfissionais() {
   pegar("listaProfissionais").innerHTML = PROFSSIONAIS.map(
-    (item) => `
+    (profissional) => `
       <article class="cartao-profissional">
-        <div class="estrelas">${"★".repeat(item.estrelas)}${"☆".repeat(5 - item.estrelas)}</div>
-        <p>“${item.texto}”</p>
-        <footer>
-          <strong>${item.nome}</strong>
-          <span>${item.cargo}</span>
-        </footer>
+        <div class="foto">
+          <img src="${profissional.foto}" alt="${profissional.nome}" />
+        </div>
+        <div class="conteudo-profissional">
+          <p>“${profissional.texto}”</p>
+          <footer>
+            <strong>${profissional.nome}</strong>
+            <span>${profissional.cargo}</span>
+          </footer>
+        </div>
       </article>`,
   ).join("");
 }
