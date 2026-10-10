@@ -340,20 +340,61 @@ function ligarMenu() {
   });
 }
 
-/* ---------- Formulário de orçamento ----------
-   ATENÇÃO: por enquanto o formulário NÃO envia e-mail.
-   Ele só mostra uma mensagem de confirmação na tela.
-   Quando quiser enviar de verdade, é aqui que entra a integração. */
+/* ---------- Formulário de orçamento ----------*/
 function ligarFormulario() {
-  const formulario = pegar("formularioOrcamento");
-  const aviso = pegar("avisoForm");
+  const formulario = document.getElementById("formularioOrcamento");
+  const aviso = document.getElementById("avisoForm");
+  const botao = formulario.querySelector('button[type="submit"]');
 
-  formulario.addEventListener("submit", (evento) => {
-    evento.preventDefault(); // impede a página de recarregar
+  formulario.addEventListener("submit", async (evento) => {
+    evento.preventDefault();
 
-    const nome = formulario.nome.value.trim();
-    aviso.textContent = `Obrigada, ${nome}! Recebemos seu pedido e entramos em contato em até 1 dia útil.`;
-    formulario.reset();
+    const nome = formulario.elements["nome"].value.trim();
+
+    aviso.textContent = "Enviando orçamento...";
+    botao.disabled = true;
+
+    try {
+      const dados = Object.fromEntries(
+        new FormData(formulario).entries()
+      );
+
+      const resposta = await fetch(
+        "https://formsubmit.co/ajax/magnaville.ilht@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(dados)
+        }
+      );
+
+      const resultado = await resposta.json();
+
+      console.log("Resposta do FormSubmit:", resultado);
+
+      if (!resposta.ok || resultado.success !== true &&
+          resultado.success !== "true") {
+        throw new Error(
+          resultado.message || "O serviço recusou o envio."
+        );
+      }
+
+      aviso.textContent =
+        `Obrigada, ${nome}! Seu orçamento foi enviado com sucesso.`;
+
+      formulario.reset();
+
+    } catch (erro) {
+      console.error("Erro no formulário:", erro);
+
+      aviso.textContent =
+        "Não foi possível enviar. Verifique a conexão e tente novamente.";
+    } finally {
+      botao.disabled = false;
+    }
   });
 }
 
